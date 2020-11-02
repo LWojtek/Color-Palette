@@ -5,12 +5,12 @@
 }
 
 body {
-      font-family: 'Underdog', sans-serif;
+      font-family: 'Muli', sans-serif;
       color: rgb(51, 51, 51);
 }
 
 button {
-      font-family: 'Underdog', sans-serif;
+      font-family: 'Muli', sans-serif;
 }
 
 path,
@@ -46,17 +46,18 @@ svg {
       flex-direction: column;
       position: absolute;
       bottom: 0%;
-      background: rgba(0, 0, 0, .4);
+      background: rgba(0, 0, 0, .7);
       padding: 1rem;
       width: 80%;
       border-radius: 1rem 1rem 0 0;
       /* We are adding an adjustment class */
-      /* transform: translateY(100px); */
-      /* opacity: 0; */
-      /* pointer-events: none; */
+      transform: translateY(100px);
+      opacity: 0;
+      pointer-events: none;
+      transition: .2s all ease-in-out;
 }
 
-.sliders.active {
+.active {
       opacity: 1;
       transform: translateY(0px);
       pointer-events: all;

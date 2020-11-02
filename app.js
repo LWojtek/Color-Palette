@@ -4,6 +4,9 @@ const colorDivs = document.querySelectorAll('.color');
 const generateBtn = document.querySelector('.generate');
 const sliders = document.querySelectorAll('input[type="range"]');
 const currentHexes = document.querySelectorAll('.color h2');
+const adjustBtn = document.querySelectorAll('.adjust');
+const slidersToggle = document.querySelectorAll('.sliders')
+
 
 
 let initialColors;
@@ -18,6 +21,7 @@ generateBtn.addEventListener('click', () => {
 sliders.forEach(slider => {
       slider.addEventListener('input', hslControls);
 
+
 })
 
 colorDivs.forEach((div, index) => {
@@ -25,6 +29,17 @@ colorDivs.forEach((div, index) => {
             updateTextUI(index)
       })
 })
+
+
+adjustBtn.forEach((button, index) => {
+      button.addEventListener('click', () => {
+            openAdjustmentPanel(index);
+      })
+})
+
+
+
+
 
 // Functions
 
@@ -169,6 +184,10 @@ function resetInputs() {
                   slider.value = Math.floor(satValue * 100) / 100;
             }
       })
+}
+
+function openAdjustmentPanel(index) {
+      slidersToggle[index].classList.toggle('active');
 }
 
 randomColors();
